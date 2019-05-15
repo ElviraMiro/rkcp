@@ -1,0 +1,2135 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.min.css">
+
+      
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.min.js"></script>
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none} 
+       
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="github-repository">GitHub repository:</h1>
+
+<p><a href="https://github.com/ElviraMiro/rkcp">https://github.com/ElviraMiro/rkcp</a></p>
+<h1 class="mume-header" id="installation">Installation</h1>
+
+<p>To use CLI to render document, please install (depending on your system configuration, you may need to use <code>sudo</code>):</p>
+<pre class="language-">npm install -g markdown-cli-renderer
+npm install -g babel-runtime
+</pre>
+<h2 class="mume-header" id="rendering-document">Rendering document</h2>
+
+<p>To render current version just type:</p>
+<p><code>./render.sh</code></p>
+<h2 class="mume-header" id="viewing-current-documents">Viewing current documents</h2>
+
+<p>We recommend using MS VSCode for this:</p>
+<p><a href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a></p>
+<p>With installed plugins:</p>
+<ul>
+<li>Mermaid preview</li>
+<li>Markdown Preview Mermaid support</li>
+</ul>
+<p>After installing those plugins you should see something like this:</p>
+<p><img src="./assets/vscode.png" alt=""></p>
+<h1 class="mume-header" id="user-management-api">User management API</h1>
+
+<p>This section contains</p>
+<h1 class="mume-header" id="barong-management-api">Barong Management API</h1>
+
+<p>This section contains diagrams on Barong Management API</p>
+<h2 class="mume-header" id="labels-with-private-scope">Labels with 'private' scope</h2>
+
+<h3 class="mume-header" id="create-a-label-with-private-scope-and-assigns-to-account">Create a label with 'private' scope and assigns to account</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Barong
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request POST '{APPLOGIC}/api/v1/labels/new'
+    Proxy->>AppLogic: redirect POST '{APPLOGIC}/api/v1/labels/new'
+    AppLogic->>Db: Insert record
+
+    AppLogic->>Vault: Create OTP (MFA)
+    Vault-->>AppLogic: Created OTP (MFA)
+    AppLogic-->>Proxy: Label ID in queue
+    Proxy-->>User: Label ID in queue
+
+    Vault->>User: Send GA OTP
+    User->>Proxy: MFA Verification LabelId + OTP, POST '{APPLOGIC}/api/v1/labels/verify'
+    Proxy->>AppLogic: redirect POST '{APPLOGIC}/api/v1/labels/verify'
+
+    AppLogic->>Vault: Check sign policy
+    Vault-->>AppLogic: Trust
+
+    AppLogic->>+Db: update record
+    AppLogic->>+Barong: jws POST '{BARONG}/management_api/v1/labels/'
+    Barong-->>AppLogic: response result
+    AppLogic-->>Proxy: Response result
+    Proxy-->>User: Redirect results
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Barong
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request POST &apos;{APPLOGIC}/api/v1/labels/new&apos;
+    Proxy-&gt;&gt;AppLogic: redirect POST &apos;{APPLOGIC}/api/v1/labels/new&apos;
+    AppLogic-&gt;&gt;Db: Insert record
+
+    AppLogic-&gt;&gt;Vault: Create OTP (MFA)
+    Vault--&gt;&gt;AppLogic: Created OTP (MFA)
+    AppLogic--&gt;&gt;Proxy: Label ID in queue
+    Proxy--&gt;&gt;User: Label ID in queue
+
+    Vault-&gt;&gt;User: Send GA OTP
+    User-&gt;&gt;Proxy: MFA Verification LabelId + OTP, POST &apos;{APPLOGIC}/api/v1/labels/verify&apos;
+    Proxy-&gt;&gt;AppLogic: redirect POST &apos;{APPLOGIC}/api/v1/labels/verify&apos;
+
+    AppLogic-&gt;&gt;Vault: Check sign policy
+    Vault--&gt;&gt;AppLogic: Trust
+
+    AppLogic-&gt;&gt;+Db: update record
+    AppLogic-&gt;&gt;+Barong: jws POST &apos;{BARONG}/management_api/v1/labels/&apos;
+    Barong--&gt;&gt;AppLogic: response result
+    AppLogic--&gt;&gt;Proxy: Response result
+    Proxy--&gt;&gt;User: Redirect results
+</pre>
+<h3 class="mume-header" id="update-label">Update label</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Barong
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request POST '{APPLOGIC}/api/v1/labels/update'
+    Proxy->>AppLogic: redirect POST '{APPLOGIC}/api/v1/labels/update'
+    AppLogic->>Db: Find record
+    Db-->>AppLogic: Receive label Id
+
+    AppLogic->>Vault: Create OTP (MFA)
+    Vault-->>AppLogic: Created OTP (MFA)
+    AppLogic-->>Proxy: Label ID in queue
+    Proxy-->>User: Label ID in queue
+
+    Vault->>User: Send GA OTP
+    User->>Proxy: MFA Verification LabelId + OTP, POST '{APPLOGIC}/api/v1/labels/verify'
+    Proxy->>AppLogic: redirect POST '{APPLOGIC}/api/v1/labels/verify'
+
+    AppLogic->>Vault: Check sign policy
+    Vault-->>AppLogic: Trust
+
+    AppLogic->>+Db: update record
+    AppLogic->>+Barong: jws PUT '{BARONG}/management_api/v1/labels/'
+    Barong-->>AppLogic: response result
+    AppLogic-->>Proxy: Response result
+    Proxy-->>User: Redirect results
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Barong
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request POST &apos;{APPLOGIC}/api/v1/labels/update&apos;
+    Proxy-&gt;&gt;AppLogic: redirect POST &apos;{APPLOGIC}/api/v1/labels/update&apos;
+    AppLogic-&gt;&gt;Db: Find record
+    Db--&gt;&gt;AppLogic: Receive label Id
+
+    AppLogic-&gt;&gt;Vault: Create OTP (MFA)
+    Vault--&gt;&gt;AppLogic: Created OTP (MFA)
+    AppLogic--&gt;&gt;Proxy: Label ID in queue
+    Proxy--&gt;&gt;User: Label ID in queue
+
+    Vault-&gt;&gt;User: Send GA OTP
+    User-&gt;&gt;Proxy: MFA Verification LabelId + OTP, POST &apos;{APPLOGIC}/api/v1/labels/verify&apos;
+    Proxy-&gt;&gt;AppLogic: redirect POST &apos;{APPLOGIC}/api/v1/labels/verify&apos;
+
+    AppLogic-&gt;&gt;Vault: Check sign policy
+    Vault--&gt;&gt;AppLogic: Trust
+
+    AppLogic-&gt;&gt;+Db: update record
+    AppLogic-&gt;&gt;+Barong: jws PUT &apos;{BARONG}/management_api/v1/labels/&apos;
+    Barong--&gt;&gt;AppLogic: response result
+    AppLogic--&gt;&gt;Proxy: Response result
+    Proxy--&gt;&gt;User: Redirect results
+</pre>
+<h3 class="mume-header" id="delete-label">Delete label</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Barong
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request POST '{APPLOGIC}/api/v1/labels/delete'
+    Proxy->>AppLogic: redirect POST '{APPLOGIC}/api/v1/labels/delete'
+    AppLogic->>Db: Find record
+    Db-->>AppLogic: Receive label Id
+
+    AppLogic->>Vault: Create OTP (MFA)
+    Vault-->>AppLogic: Created OTP (MFA)
+    AppLogic-->>Proxy: Label ID in queue
+    Proxy-->>User: Label ID in queue
+
+    Vault->>User: Send GA OTP
+    User->>Proxy: MFA Verification LabelId + OTP, POST '{APPLOGIC}/api/v1/labels/verify'
+    Proxy->>AppLogic: redirect POST '{APPLOGIC}/api/v1/labels/verify'
+
+    AppLogic->>Vault: Check sign policy
+    Vault-->>AppLogic: Trust
+
+    AppLogic->>Db: update record
+    AppLogic->>Barong: jws PUT '{BARONG}/management_api/v1/labels/delete'
+    Barong-->>AppLogic: response result
+    AppLogic-->>Proxy: Response result
+    Proxy-->>User: Redirect results
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Barong
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request POST &apos;{APPLOGIC}/api/v1/labels/delete&apos;
+    Proxy-&gt;&gt;AppLogic: redirect POST &apos;{APPLOGIC}/api/v1/labels/delete&apos;
+    AppLogic-&gt;&gt;Db: Find record
+    Db--&gt;&gt;AppLogic: Receive label Id
+
+    AppLogic-&gt;&gt;Vault: Create OTP (MFA)
+    Vault--&gt;&gt;AppLogic: Created OTP (MFA)
+    AppLogic--&gt;&gt;Proxy: Label ID in queue
+    Proxy--&gt;&gt;User: Label ID in queue
+
+    Vault-&gt;&gt;User: Send GA OTP
+    User-&gt;&gt;Proxy: MFA Verification LabelId + OTP, POST &apos;{APPLOGIC}/api/v1/labels/verify&apos;
+    Proxy-&gt;&gt;AppLogic: redirect POST &apos;{APPLOGIC}/api/v1/labels/verify&apos;
+
+    AppLogic-&gt;&gt;Vault: Check sign policy
+    Vault--&gt;&gt;AppLogic: Trust
+
+    AppLogic-&gt;&gt;Db: update record
+    AppLogic-&gt;&gt;Barong: jws PUT &apos;{BARONG}/management_api/v1/labels/delete&apos;
+    Barong--&gt;&gt;AppLogic: response result
+    AppLogic--&gt;&gt;Proxy: Response result
+    Proxy--&gt;&gt;User: Redirect results
+</pre>
+<h2 class="mume-header" id="timestamp">Timestamp</h2>
+
+<h3 class="mume-header" id="receive-server-time-in-seconds-since-unix-epoch">Receive server time in seconds since Unix epoch</h3>
+
+<p>This endpoint is useful for expiration syncronization and testing Management API</p>
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Barong
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request POST '{APPLOGIC}/api/v1/timestamp'
+    Proxy->>AppLogic: redirect POST '{APPLOGIC}/api/v1/timestamp'
+    
+    AppLogic->>Vault: Create OTP (MFA)
+    Vault-->>AppLogic: Created OTP (MFA)
+    
+    Vault->>User: Send GA OTP
+    User->>Proxy: MFA Verification OTP, POST '{APPLOGIC}/api/v1/timestamp/verify'
+    Proxy->>AppLogic: redirect POST '{APPLOGIC}/api/v1/timestamp/verify'
+
+    AppLogic->>Vault: Check sign policy
+    Vault-->>AppLogic: Trust
+
+    AppLogic->>+Barong: jws POST '{BARONG}/management_api/v1/timestamp/'
+    Barong-->>AppLogic: response result
+    AppLogic-->>Proxy: Response result
+    Proxy-->>User: Redirect results
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Barong
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request POST &apos;{APPLOGIC}/api/v1/timestamp&apos;
+    Proxy-&gt;&gt;AppLogic: redirect POST &apos;{APPLOGIC}/api/v1/timestamp&apos;
+    
+    AppLogic-&gt;&gt;Vault: Create OTP (MFA)
+    Vault--&gt;&gt;AppLogic: Created OTP (MFA)
+    
+    Vault-&gt;&gt;User: Send GA OTP
+    User-&gt;&gt;Proxy: MFA Verification OTP, POST &apos;{APPLOGIC}/api/v1/timestamp/verify&apos;
+    Proxy-&gt;&gt;AppLogic: redirect POST &apos;{APPLOGIC}/api/v1/timestamp/verify&apos;
+
+    AppLogic-&gt;&gt;Vault: Check sign policy
+    Vault--&gt;&gt;AppLogic: Trust
+
+    AppLogic-&gt;&gt;+Barong: jws POST &apos;{BARONG}/management_api/v1/timestamp/&apos;
+    Barong--&gt;&gt;AppLogic: response result
+    AppLogic--&gt;&gt;Proxy: Response result
+    Proxy--&gt;&gt;User: Redirect results
+</pre>
+<h1 class="mume-header" id="trading-api">Trading API</h1>
+
+<p>API which can be used by client application like SPA## Orders</p>
+<h3 class="mume-header" id="saving-order-and-start-matching">Saving order and start matching</h3>
+
+<p>This is common process when add new order (from api)</p>
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Pusher
+
+    Peatio->>Db: save order
+    PeatioDaemons->>Pusher: [trigger pusher_member / order]
+    Peatio->>Db: lock funds (change account balance)
+    Db-->>Peatio: result
+    opt success
+        Peatio->>RabbitMQ: [in default channel publish action:submit order to the matching queue]
+        opt daemons worker
+            RabbitMQ-->>PeatioDaemons: [receive data from default channel]
+            PeatioDaemons->>RabbitMQ: [in orderbook channel publish action:new marketID+sell/marketId+buy]
+            RabbitMQ-->>PeatioDaemons: [receive data from orderbook channel]
+            PeatioDaemons->>RabbitMQ: [in default channel to the matching new_trade, order_processor]
+            PeatioDaemons-->>PeatioDaemons: matching
+            PeatioDaemons->>Db: save trade, update orders
+            PeatioDaemons->>Pusher: [trigger global.trade-market / trade]
+        end
+    end
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Pusher
+
+    Peatio-&gt;&gt;Db: save order
+    PeatioDaemons-&gt;&gt;Pusher: [trigger pusher_member / order]
+    Peatio-&gt;&gt;Db: lock funds (change account balance)
+    Db--&gt;&gt;Peatio: result
+    opt success
+        Peatio-&gt;&gt;RabbitMQ: [in default channel publish action:submit order to the matching queue]
+        opt daemons worker
+            RabbitMQ--&gt;&gt;PeatioDaemons: [receive data from default channel]
+            PeatioDaemons-&gt;&gt;RabbitMQ: [in orderbook channel publish action:new marketID+sell/marketId+buy]
+            RabbitMQ--&gt;&gt;PeatioDaemons: [receive data from orderbook channel]
+            PeatioDaemons-&gt;&gt;RabbitMQ: [in default channel to the matching new_trade, order_processor]
+            PeatioDaemons--&gt;&gt;PeatioDaemons: matching
+            PeatioDaemons-&gt;&gt;Db: save trade, update orders
+            PeatioDaemons-&gt;&gt;Pusher: [trigger global.trade-market / trade]
+        end
+    end
+</pre>
+<h3 class="mume-header" id="create-new-order">Create new order</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    PeatioDaemons->>RabbitMQ: [subscribe default channel]
+    Note over PeatioDaemons,RabbitMQ: queues - matching, new_trade, order_processor
+    PeatioDaemons->>RabbitMQ: [subscribe orderbook channel]
+    Note over PeatioDaemons,RabbitMQ: queues - slave_book
+    PeatioDaemons->>RabbitMQ: [subscribe trade channel]
+    Note over PeatioDaemons,RabbitMQ: queues - market_ticker
+    User->>Proxy: request POST '{APPLOGIC}/api/v1/orders/new'
+    Proxy->>AppLogic: redirect POST '{APPLOGIC}/api/v1/orders/new'
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic->>Peatio: request POST '{PEATIO}/api/v2/orders/'
+    Note over Peatio: verify JWT
+    Note over Peatio, PeatioDaemons: see Saving order and start matching
+    Peatio-->>AppLogic: response saving result
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    PeatioDaemons-&gt;&gt;RabbitMQ: [subscribe default channel]
+    Note over PeatioDaemons,RabbitMQ: queues - matching, new_trade, order_processor
+    PeatioDaemons-&gt;&gt;RabbitMQ: [subscribe orderbook channel]
+    Note over PeatioDaemons,RabbitMQ: queues - slave_book
+    PeatioDaemons-&gt;&gt;RabbitMQ: [subscribe trade channel]
+    Note over PeatioDaemons,RabbitMQ: queues - market_ticker
+    User-&gt;&gt;Proxy: request POST &apos;{APPLOGIC}/api/v1/orders/new&apos;
+    Proxy-&gt;&gt;AppLogic: redirect POST &apos;{APPLOGIC}/api/v1/orders/new&apos;
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic-&gt;&gt;Peatio: request POST &apos;{PEATIO}/api/v2/orders/&apos;
+    Note over Peatio: verify JWT
+    Note over Peatio, PeatioDaemons: see Saving order and start matching
+    Peatio--&gt;&gt;AppLogic: response saving result
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h3 class="mume-header" id="create-multi-orders">Create multi orders</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    PeatioDaemons->>RabbitMQ: [subscribe default channel]
+    Note over PeatioDaemons,RabbitMQ: queues - matching, new_trade, order_processor
+    PeatioDaemons->>RabbitMQ: [subscribe orderbook channel]
+    Note over PeatioDaemons,RabbitMQ: queues - slave_book
+    PeatioDaemons->>RabbitMQ: [subscribe trade channel]
+    Note over PeatioDaemons,RabbitMQ: queues - market_ticker
+
+    User->>Proxy: request POST '{APPLOGIC}/api/v1/orders/multi'
+    Proxy->>AppLogic: redirect POST '{APPLOGIC}/api/v1/orders/multi'
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic->>Peatio: request POST '{PEATIO}/api/v2/order/multi'
+    Note over Peatio: verify JWT
+    Peatio->>Peatio: select each order from request
+    opt each order
+        Note over Peatio, PeatioDaemons: see Saving order and start matching
+    end
+
+    Peatio-->>AppLogic: Response result
+
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    PeatioDaemons-&gt;&gt;RabbitMQ: [subscribe default channel]
+    Note over PeatioDaemons,RabbitMQ: queues - matching, new_trade, order_processor
+    PeatioDaemons-&gt;&gt;RabbitMQ: [subscribe orderbook channel]
+    Note over PeatioDaemons,RabbitMQ: queues - slave_book
+    PeatioDaemons-&gt;&gt;RabbitMQ: [subscribe trade channel]
+    Note over PeatioDaemons,RabbitMQ: queues - market_ticker
+
+    User-&gt;&gt;Proxy: request POST &apos;{APPLOGIC}/api/v1/orders/multi&apos;
+    Proxy-&gt;&gt;AppLogic: redirect POST &apos;{APPLOGIC}/api/v1/orders/multi&apos;
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic-&gt;&gt;Peatio: request POST &apos;{PEATIO}/api/v2/order/multi&apos;
+    Note over Peatio: verify JWT
+    Peatio-&gt;&gt;Peatio: select each order from request
+    opt each order
+        Note over Peatio, PeatioDaemons: see Saving order and start matching
+    end
+
+    Peatio--&gt;&gt;AppLogic: Response result
+
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h3 class="mume-header" id="delete-order">Delete order</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    PeatioDaemons->>RabbitMQ: [subscribe default channel]
+    Note over PeatioDaemons,RabbitMQ: queues - matching
+    PeatioDaemons->>RabbitMQ: [subscribe orderbook channel]
+    Note over PeatioDaemons,RabbitMQ: queues - slave_book
+    PeatioDaemons->>RabbitMQ: [subscribe trade channel]
+    Note over PeatioDaemons,RabbitMQ: queues - market_ticker
+
+    User->>Proxy: request POST '{APPLOGIC}/api/v1/orders/delete'
+    Proxy->>AppLogic: redirect POST '{APPLOGIC}/api/v1/orders/delete'
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic->>Peatio: request POST '{PEATIO}/api/v2/order/delete'
+    Note over Peatio: verify JWT
+    PeatioDaemons->>Pusher: [trigger pusher_member / order]
+    opt daemons worker
+        RabbitMQ-->>PeatioDaemons: [receive data from default channel]
+        PeatioDaemons->>RabbitMQ: [in orderbook channel publish action:cancel]
+        RabbitMQ-->>PeatioDaemons: [receive data from orderbook channel]
+        PeatioDaemons->>RabbitMQ: [in default channel to the canceling order_processor]
+        PeatioDaemons-->>PeatioDaemons: calculate
+        PeatioDaemons->>Db: save data
+        PeatioDaemons->>Pusher: [trigger global.trade-market / trade]
+    end
+
+    Peatio-->>AppLogic: Response result
+
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    PeatioDaemons-&gt;&gt;RabbitMQ: [subscribe default channel]
+    Note over PeatioDaemons,RabbitMQ: queues - matching
+    PeatioDaemons-&gt;&gt;RabbitMQ: [subscribe orderbook channel]
+    Note over PeatioDaemons,RabbitMQ: queues - slave_book
+    PeatioDaemons-&gt;&gt;RabbitMQ: [subscribe trade channel]
+    Note over PeatioDaemons,RabbitMQ: queues - market_ticker
+
+    User-&gt;&gt;Proxy: request POST &apos;{APPLOGIC}/api/v1/orders/delete&apos;
+    Proxy-&gt;&gt;AppLogic: redirect POST &apos;{APPLOGIC}/api/v1/orders/delete&apos;
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic-&gt;&gt;Peatio: request POST &apos;{PEATIO}/api/v2/order/delete&apos;
+    Note over Peatio: verify JWT
+    PeatioDaemons-&gt;&gt;Pusher: [trigger pusher_member / order]
+    opt daemons worker
+        RabbitMQ--&gt;&gt;PeatioDaemons: [receive data from default channel]
+        PeatioDaemons-&gt;&gt;RabbitMQ: [in orderbook channel publish action:cancel]
+        RabbitMQ--&gt;&gt;PeatioDaemons: [receive data from orderbook channel]
+        PeatioDaemons-&gt;&gt;RabbitMQ: [in default channel to the canceling order_processor]
+        PeatioDaemons--&gt;&gt;PeatioDaemons: calculate
+        PeatioDaemons-&gt;&gt;Db: save data
+        PeatioDaemons-&gt;&gt;Pusher: [trigger global.trade-market / trade]
+    end
+
+    Peatio--&gt;&gt;AppLogic: Response result
+
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h3 class="mume-header" id="clear-all-orders">Clear all orders</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    PeatioDaemons->>RabbitMQ: [subscribe default channel]
+    Note over PeatioDaemons,RabbitMQ: queues - matching
+    PeatioDaemons->>RabbitMQ: [subscribe orderbook channel]
+    Note over PeatioDaemons,RabbitMQ: queues - slave_book
+    PeatioDaemons->>RabbitMQ: [subscribe trade channel]
+    Note over PeatioDaemons,RabbitMQ: queues - market_ticker
+
+    User->>Proxy: request POST '{APPLOGIC}/api/v1/orders/clear'
+    Proxy->>AppLogic: redirect POST '{APPLOGIC}/api/v1/orders/clear'
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic->>Peatio: request POST '{PEATIO}/api/v2/order/clear'
+    Note over Peatio: verify JWT
+    Peatio->>Db: get orders list
+    opt each order
+        Note over PeatioDaemons,RabbitMQ: see opt [daemons worker] in DFD Delete order
+    end
+
+    Peatio-->>AppLogic: Response result
+
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    PeatioDaemons-&gt;&gt;RabbitMQ: [subscribe default channel]
+    Note over PeatioDaemons,RabbitMQ: queues - matching
+    PeatioDaemons-&gt;&gt;RabbitMQ: [subscribe orderbook channel]
+    Note over PeatioDaemons,RabbitMQ: queues - slave_book
+    PeatioDaemons-&gt;&gt;RabbitMQ: [subscribe trade channel]
+    Note over PeatioDaemons,RabbitMQ: queues - market_ticker
+
+    User-&gt;&gt;Proxy: request POST &apos;{APPLOGIC}/api/v1/orders/clear&apos;
+    Proxy-&gt;&gt;AppLogic: redirect POST &apos;{APPLOGIC}/api/v1/orders/clear&apos;
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic-&gt;&gt;Peatio: request POST &apos;{PEATIO}/api/v2/order/clear&apos;
+    Note over Peatio: verify JWT
+    Peatio-&gt;&gt;Db: get orders list
+    opt each order
+        Note over PeatioDaemons,RabbitMQ: see opt [daemons worker] in DFD Delete order
+    end
+
+    Peatio--&gt;&gt;AppLogic: Response result
+
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h3 class="mume-header" id="get-orders-list">Get orders list</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request GET '{APPLOGIC}/api/v1/orders'
+    Proxy->>AppLogic: redirect GET '{APPLOGIC}/api/v1/orders'
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic->>Peatio: request GET '{PEATIO}/api/v2/orders'
+    Note over Peatio: verify JWT
+    Peatio->>Db: get orders list
+    Db-->>Peatio: response list
+
+    Peatio-->>AppLogic: Response result
+
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request GET &apos;{APPLOGIC}/api/v1/orders&apos;
+    Proxy-&gt;&gt;AppLogic: redirect GET &apos;{APPLOGIC}/api/v1/orders&apos;
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic-&gt;&gt;Peatio: request GET &apos;{PEATIO}/api/v2/orders&apos;
+    Note over Peatio: verify JWT
+    Peatio-&gt;&gt;Db: get orders list
+    Db--&gt;&gt;Peatio: response list
+
+    Peatio--&gt;&gt;AppLogic: Response result
+
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h3 class="mume-header" id="get-order-detail">Get order detail</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request GET '{APPLOGIC}/api/v1/order'
+    Proxy->>AppLogic: redirect GET '{APPLOGIC}/api/v1/order'
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic->>Peatio: request GET '{PEATIO}/api/v2/order'
+    Note over Peatio: verify JWT
+    Peatio->>Db: get order details
+    Db-->>Peatio: response order
+
+    Peatio-->>AppLogic: Response result
+
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request GET &apos;{APPLOGIC}/api/v1/order&apos;
+    Proxy-&gt;&gt;AppLogic: redirect GET &apos;{APPLOGIC}/api/v1/order&apos;
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic-&gt;&gt;Peatio: request GET &apos;{PEATIO}/api/v2/order&apos;
+    Note over Peatio: verify JWT
+    Peatio-&gt;&gt;Db: get order details
+    Db--&gt;&gt;Peatio: response order
+
+    Peatio--&gt;&gt;AppLogic: Response result
+
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h3 class="mume-header" id="get-the-order-book-of-specified-market">Get the order book of specified market</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request GET '{APPLOGIC}/api/v1/order_book'
+    Proxy->>AppLogic: redirect GET '{APPLOGIC}/api/v1/order_book'
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic->>Peatio: request GET '{PEATIO}/api/v2/order_book'
+    Note over Peatio: verify JWT
+    Peatio->>+Db: get orders (asks)
+    Peatio->>+Db: get orders (bids)
+    Peatio->>-Db: response asks
+    Peatio->>-Db: response bids
+    Peatio-->>Peatio: create response array
+
+    Peatio-->>AppLogic: Response
+
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request GET &apos;{APPLOGIC}/api/v1/order_book&apos;
+    Proxy-&gt;&gt;AppLogic: redirect GET &apos;{APPLOGIC}/api/v1/order_book&apos;
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic-&gt;&gt;Peatio: request GET &apos;{PEATIO}/api/v2/order_book&apos;
+    Note over Peatio: verify JWT
+    Peatio-&gt;&gt;+Db: get orders (asks)
+    Peatio-&gt;&gt;+Db: get orders (bids)
+    Peatio-&gt;&gt;-Db: response asks
+    Peatio-&gt;&gt;-Db: response bids
+    Peatio--&gt;&gt;Peatio: create response array
+
+    Peatio--&gt;&gt;AppLogic: Response
+
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h3 class="mume-header" id="get-depth-or-specified-market">Get depth or specified market</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request GET '{APPLOGIC}/api/v1/depth'
+    Proxy->>AppLogic: redirect GET '{APPLOGIC}/api/v1/depth'
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic->>Peatio: request GET '{PEATIO}/api/v2/depth'
+    Note over Peatio: verify JWT
+    Peatio->>Peatio: get Global for market with specific (asks and bids) and add timestamp
+    Peatio-->>Peatio: create response data
+
+    Peatio-->>AppLogic: Response
+
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request GET &apos;{APPLOGIC}/api/v1/depth&apos;
+    Proxy-&gt;&gt;AppLogic: redirect GET &apos;{APPLOGIC}/api/v1/depth&apos;
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic-&gt;&gt;Peatio: request GET &apos;{PEATIO}/api/v2/depth&apos;
+    Note over Peatio: verify JWT
+    Peatio-&gt;&gt;Peatio: get Global for market with specific (asks and bids) and add timestamp
+    Peatio--&gt;&gt;Peatio: create response data
+
+    Peatio--&gt;&gt;AppLogic: Response
+
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h3 class="mume-header" id="get-members-executed-trades">Get members executed trades</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request GET '{APPLOGIC}/api/v1/trades'
+    Proxy->>AppLogic: redirect GET '{APPLOGIC}/api/v1/trades'
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic->>Peatio: request GET '{PEATIO}/api/v2/trades'
+    Note over Peatio: verify JWT
+    Peatio->>Db: get trades list
+    Db-->>Peatio: response list
+
+    Peatio-->>AppLogic: Response result
+
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request GET &apos;{APPLOGIC}/api/v1/trades&apos;
+    Proxy-&gt;&gt;AppLogic: redirect GET &apos;{APPLOGIC}/api/v1/trades&apos;
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic-&gt;&gt;Peatio: request GET &apos;{PEATIO}/api/v2/trades&apos;
+    Note over Peatio: verify JWT
+    Peatio-&gt;&gt;Db: get trades list
+    Db--&gt;&gt;Peatio: response list
+
+    Peatio--&gt;&gt;AppLogic: Response result
+
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h2 class="mume-header" id="public-data">Public data</h2>
+
+<h3 class="mume-header" id="get-markets-list">Get markets list</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request GET '{APPLOGIC}/api/v1/markets'
+    Note over User: simple request without jwt
+    Proxy->>AppLogic: redirect GET '{APPLOGIC}/api/v1/markets'
+    AppLogic->>Peatio: request GET '{PEATIO}/api/v2/markets'
+    Peatio->>Db: get markets
+    Db-->>Peatio: response markets
+    Peatio-->>AppLogic: response JSON
+
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request GET &apos;{APPLOGIC}/api/v1/markets&apos;
+    Note over User: simple request without jwt
+    Proxy-&gt;&gt;AppLogic: redirect GET &apos;{APPLOGIC}/api/v1/markets&apos;
+    AppLogic-&gt;&gt;Peatio: request GET &apos;{PEATIO}/api/v2/markets&apos;
+    Peatio-&gt;&gt;Db: get markets
+    Db--&gt;&gt;Peatio: response markets
+    Peatio--&gt;&gt;AppLogic: response JSON
+
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h3 class="mume-header" id="get-tickers">Get tickers</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request GET '{APPLOGIC}/api/v1/tickers'
+    Note over User: simple request without jwt
+    Proxy->>AppLogic: redirect GET '{APPLOGIC}/api/v1/tickers'
+    AppLogic->>Peatio: request GET '{PEATIO}/api/v2/tickers'
+    Peatio->>Db: get tickers
+    Db-->>Peatio: response tickers
+    Peatio-->>AppLogic: response JSON
+
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request GET &apos;{APPLOGIC}/api/v1/tickers&apos;
+    Note over User: simple request without jwt
+    Proxy-&gt;&gt;AppLogic: redirect GET &apos;{APPLOGIC}/api/v1/tickers&apos;
+    AppLogic-&gt;&gt;Peatio: request GET &apos;{PEATIO}/api/v2/tickers&apos;
+    Peatio-&gt;&gt;Db: get tickers
+    Db--&gt;&gt;Peatio: response tickers
+    Peatio--&gt;&gt;AppLogic: response JSON
+
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h3 class="mume-header" id="get-tickers-for-specified-market">Get tickers for specified market</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request GET '{APPLOGIC}/api/v1/tickers/{market}'
+    Note over User: simple request without jwt
+    Proxy->>AppLogic: redirect GET '{APPLOGIC}/api/v1/tickers/{market}'
+    AppLogic->>Peatio: request GET '{PEATIO}/api/v2/tickers/{market}'
+    Peatio->>Db: get tickers for specified market
+    Db-->>Peatio: response tickers
+    Peatio-->>AppLogic: response JSON
+
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request GET &apos;{APPLOGIC}/api/v1/tickers/{market}&apos;
+    Note over User: simple request without jwt
+    Proxy-&gt;&gt;AppLogic: redirect GET &apos;{APPLOGIC}/api/v1/tickers/{market}&apos;
+    AppLogic-&gt;&gt;Peatio: request GET &apos;{PEATIO}/api/v2/tickers/{market}&apos;
+    Peatio-&gt;&gt;Db: get tickers for specified market
+    Db--&gt;&gt;Peatio: response tickers
+    Peatio--&gt;&gt;AppLogic: response JSON
+
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h3 class="mume-header" id="get-order-book-for-market">Get order book for market</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request GET '{APPLOGIC}/api/v1/order_book'
+    Note over User: simple request without jwt
+    Proxy->>AppLogic: redirect GET '{APPLOGIC}/api/v1/order_book'
+    AppLogic->>Peatio: request GET '{PEATIO}/api/v2/order_book'
+    Peatio->>Db: request order book
+    Db-->>Peatio: response list
+    Peatio-->>AppLogic: response JSON
+
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request GET &apos;{APPLOGIC}/api/v1/order_book&apos;
+    Note over User: simple request without jwt
+    Proxy-&gt;&gt;AppLogic: redirect GET &apos;{APPLOGIC}/api/v1/order_book&apos;
+    AppLogic-&gt;&gt;Peatio: request GET &apos;{PEATIO}/api/v2/order_book&apos;
+    Peatio-&gt;&gt;Db: request order book
+    Db--&gt;&gt;Peatio: response list
+    Peatio--&gt;&gt;AppLogic: response JSON
+
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h3 class="mume-header" id="get-depth">Get depth</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request GET '{APPLOGIC}/api/v1/depth'
+    Note over User: simple request without jwt
+    Proxy->>AppLogic: redirect GET '{APPLOGIC}/api/v1/depth'
+    AppLogic->>Peatio: request GET '{PEATIO}/api/v2/depth'
+    Peatio->>Db: request order book
+    Db-->>Peatio: response list
+    Peatio-->>AppLogic: response JSON
+
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request GET &apos;{APPLOGIC}/api/v1/depth&apos;
+    Note over User: simple request without jwt
+    Proxy-&gt;&gt;AppLogic: redirect GET &apos;{APPLOGIC}/api/v1/depth&apos;
+    AppLogic-&gt;&gt;Peatio: request GET &apos;{PEATIO}/api/v2/depth&apos;
+    Peatio-&gt;&gt;Db: request order book
+    Db--&gt;&gt;Peatio: response list
+    Peatio--&gt;&gt;AppLogic: response JSON
+
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h3 class="mume-header" id="get-recent-trades-on-market">Get recent trades on market</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request GET '{APPLOGIC}/api/v1/trades'
+    Note over User: simple request without jwt
+    Proxy->>AppLogic: redirect GET '{APPLOGIC}/api/v1/trades'
+    AppLogic->>Peatio: request GET '{PEATIO}/api/v2/trades'
+    Peatio->>Db: request trades
+    Db-->>Peatio: response list
+    Peatio-->>AppLogic: response JSON
+
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request GET &apos;{APPLOGIC}/api/v1/trades&apos;
+    Note over User: simple request without jwt
+    Proxy-&gt;&gt;AppLogic: redirect GET &apos;{APPLOGIC}/api/v1/trades&apos;
+    AppLogic-&gt;&gt;Peatio: request GET &apos;{PEATIO}/api/v2/trades&apos;
+    Peatio-&gt;&gt;Db: request trades
+    Db--&gt;&gt;Peatio: response list
+    Peatio--&gt;&gt;AppLogic: response JSON
+
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h3 class="mume-header" id="get-ohlck-line-of-specific-market">Get OHLC(k line) of specific market</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Redis
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request GET '{APPLOGIC}/api/v1/k'
+    Note over User: simple request without jwt
+    Proxy->>AppLogic: redirect GET '{APPLOGIC}/api/v1/k'
+    AppLogic->>Peatio: request GET '{PEATIO}/api/v2/k'
+    Peatio->>Redis: get data
+    Redis-->>Peatio: response data
+    Peatio-->>AppLogic: response JSON
+
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Redis
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request GET &apos;{APPLOGIC}/api/v1/k&apos;
+    Note over User: simple request without jwt
+    Proxy-&gt;&gt;AppLogic: redirect GET &apos;{APPLOGIC}/api/v1/k&apos;
+    AppLogic-&gt;&gt;Peatio: request GET &apos;{PEATIO}/api/v2/k&apos;
+    Peatio-&gt;&gt;Redis: get data
+    Redis--&gt;&gt;Peatio: response data
+    Peatio--&gt;&gt;AppLogic: response JSON
+
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h3 class="mume-header" id="get-fees-depositwithdrawtrading">Get fees (deposit/withdraw/trading)</h3>
+
+<p>Those endpoints is avaible in Peatio 1.8</p>
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Redis
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request GET '{APPLOGIC}/api/v1/fees/withdraw'
+    Note over User: simple request without jwt
+    Proxy->>AppLogic: redirect GET '{APPLOGIC}/api/v1/fees/withdraw'
+    AppLogic->>Peatio: request GET '{PEATIO}/api/v2/fees/withdraw'
+    Peatio->>Db: get fees
+    Db-->>Peatio: response fees
+    Peatio-->>AppLogic: response JSON
+
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Redis
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request GET &apos;{APPLOGIC}/api/v1/fees/withdraw&apos;
+    Note over User: simple request without jwt
+    Proxy-&gt;&gt;AppLogic: redirect GET &apos;{APPLOGIC}/api/v1/fees/withdraw&apos;
+    AppLogic-&gt;&gt;Peatio: request GET &apos;{PEATIO}/api/v2/fees/withdraw&apos;
+    Peatio-&gt;&gt;Db: get fees
+    Db--&gt;&gt;Peatio: response fees
+    Peatio--&gt;&gt;AppLogic: response JSON
+
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h2 class="mume-header" id="accounts-data">Account's data</h2>
+
+<h3 class="mume-header" id="get-your-profile-and-accounts-info">Get your profile and accounts info</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request GET '{APPLOGIC}/api/v1/members/me'
+    Proxy->>AppLogic: redirect GET '{APPLOGIC}/api/v1/members/me'
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic->>Peatio: request GET '{PEATIO}/api/v2/members/me'
+    Note over Peatio: verify JWT
+    Peatio->>Db: get account record
+    Db-->>Peatio: account info
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request GET &apos;{APPLOGIC}/api/v1/members/me&apos;
+    Proxy-&gt;&gt;AppLogic: redirect GET &apos;{APPLOGIC}/api/v1/members/me&apos;
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic-&gt;&gt;Peatio: request GET &apos;{PEATIO}/api/v2/members/me&apos;
+    Note over Peatio: verify JWT
+    Peatio-&gt;&gt;Db: get account record
+    Db--&gt;&gt;Peatio: account info
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h3 class="mume-header" id="get-your-deposits-history">Get your deposits history</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request GET '{APPLOGIC}/api/v1/deposits'
+    Proxy->>AppLogic: redirect GET '{APPLOGIC}/api/v1/deposits'
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic->>Peatio: request GET '{PEATIO}/api/v2/deposits'
+    Note over Peatio: verify JWT
+    Peatio->>Db: get deposits
+    Db-->>Peatio: deposits list
+    Peatio-->>AppLogic: Response
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request GET &apos;{APPLOGIC}/api/v1/deposits&apos;
+    Proxy-&gt;&gt;AppLogic: redirect GET &apos;{APPLOGIC}/api/v1/deposits&apos;
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic-&gt;&gt;Peatio: request GET &apos;{PEATIO}/api/v2/deposits&apos;
+    Note over Peatio: verify JWT
+    Peatio-&gt;&gt;Db: get deposits
+    Db--&gt;&gt;Peatio: deposits list
+    Peatio--&gt;&gt;AppLogic: Response
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h3 class="mume-header" id="get-your-deposit-address">Get your deposit address</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    PeatioDaemons->>RabbitMQ: [subscribe default channel]
+    Note over PeatioDaemons: queues - deposit_payment_address, deposit_coins
+    User->>Proxy: request GET '{APPLOGIC}/api/v1/deposit_address'
+    Proxy->>AppLogic: redirect GET '{APPLOGIC}/api/v1/deposit_address'
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic->>Peatio: request GET '{PEATIO}/api/v2/deposit_address'
+    Note over Peatio: verify JWT
+    Peatio->>Db: get account
+    Db-->>Peatio: account info
+    opt daemons worker
+        Peatio->>PeatioDaemons: request deposit coin address
+        PeatioDaemons-->>Peatio: response address
+    end
+    Peatio-->>AppLogic: Response
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    PeatioDaemons-&gt;&gt;RabbitMQ: [subscribe default channel]
+    Note over PeatioDaemons: queues - deposit_payment_address, deposit_coins
+    User-&gt;&gt;Proxy: request GET &apos;{APPLOGIC}/api/v1/deposit_address&apos;
+    Proxy-&gt;&gt;AppLogic: redirect GET &apos;{APPLOGIC}/api/v1/deposit_address&apos;
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic-&gt;&gt;Peatio: request GET &apos;{PEATIO}/api/v2/deposit_address&apos;
+    Note over Peatio: verify JWT
+    Peatio-&gt;&gt;Db: get account
+    Db--&gt;&gt;Peatio: account info
+    opt daemons worker
+        Peatio-&gt;&gt;PeatioDaemons: request deposit coin address
+        PeatioDaemons--&gt;&gt;Peatio: response address
+    end
+    Peatio--&gt;&gt;AppLogic: Response
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h3 class="mume-header" id="get-your-deposit-details">Get your deposit details</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User->>Proxy: request GET '{APPLOGIC}/api/v1/deposit'
+    Proxy->>AppLogic: redirect GET '{APPLOGIC}/api/v1/deposit'
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic->>Peatio: request GET '{PEATIO}/api/v2/deposit'
+    Note over Peatio: verify JWT
+    Peatio->>Db: get deposit details
+    Db-->>Peatio: deposit details
+    Peatio-->>AppLogic: Response
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Response
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant RabbitMQ
+    participant PeatioDaemons
+    participant Db
+    participant Vault
+    participant Notifications
+
+    User-&gt;&gt;Proxy: request GET &apos;{APPLOGIC}/api/v1/deposit&apos;
+    Proxy-&gt;&gt;AppLogic: redirect GET &apos;{APPLOGIC}/api/v1/deposit&apos;
+    Note over AppLogic: verify JWT (see JWT verification)
+    AppLogic-&gt;&gt;Peatio: request GET &apos;{PEATIO}/api/v2/deposit&apos;
+    Note over Peatio: verify JWT
+    Peatio-&gt;&gt;Db: get deposit details
+    Db--&gt;&gt;Peatio: deposit details
+    Peatio--&gt;&gt;AppLogic: Response
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Response
+</pre>
+<h1 class="mume-header" id="raised-security-api">Raised security API</h1>
+
+<p>This section describes set of API of RKCP that needs additional confirmation on actions besides using session JWT and/or API keys</p>
+<h2 class="mume-header" id="deposits-fiats">Deposits: Fiats</h2>
+
+<p>This version is not realizing in Peatio</p>
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Proxy
+    participant Barong
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Redis
+    participant Db
+    participant Vault
+    participant SmtpRelay
+    participant Pusher
+
+    PeatioDaemons->>RabbitMQ: [subscribe default channel]
+    Note over PeatioDaemons,RabbitMQ: queues - deposit_coin
+    User->>Proxy: request post '{APPLOGIC}/api/v1/deposits/new'
+    Proxy->>AppLogic: redirect post '{APPLOGIC}/api/v1/deposits/new'
+    AppLogic->>Db: Insert record
+
+    AppLogic->>Vault: Create OTP (MFA)
+    Vault-->>AppLogic: Created OTP (MFA)
+    AppLogic-->>Proxy: Deposit ID in queue
+    Proxy-->>User: Deposit ID in queue
+
+    Vault->>User: Send GA OTP
+    User->>Proxy: MFA Verification DepositId + OTP, POST {APPLOGIC}/api/v1/deposits/verify'
+    Proxy->>AppLogic: redirect POST {APPLOGIC}/api/v1/deposits/verify'
+
+    AppLogic->AppLogic: Check sign policy
+    opt if coin - daemons worker
+        PeatioDaemons->>Pusher: [trigger private-{cn} / deposit]
+        PeatioDaemons->>RabbitMQ: [publish default channel]
+    end
+    AppLogic-->>Proxy: Response
+    Proxy-->>User: Redirect
+</div>
+<pre class="language-">sequenceDiagram
+    participant User
+    participant Proxy
+    participant Barong
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Redis
+    participant Db
+    participant Vault
+    participant SmtpRelay
+    participant Pusher
+
+    PeatioDaemons-&gt;&gt;RabbitMQ: [subscribe default channel]
+    Note over PeatioDaemons,RabbitMQ: queues - deposit_coin
+    User-&gt;&gt;Proxy: request post &apos;{APPLOGIC}/api/v1/deposits/new&apos;
+    Proxy-&gt;&gt;AppLogic: redirect post &apos;{APPLOGIC}/api/v1/deposits/new&apos;
+    AppLogic-&gt;&gt;Db: Insert record
+
+    AppLogic-&gt;&gt;Vault: Create OTP (MFA)
+    Vault--&gt;&gt;AppLogic: Created OTP (MFA)
+    AppLogic--&gt;&gt;Proxy: Deposit ID in queue
+    Proxy--&gt;&gt;User: Deposit ID in queue
+
+    Vault-&gt;&gt;User: Send GA OTP
+    User-&gt;&gt;Proxy: MFA Verification DepositId + OTP, POST {APPLOGIC}/api/v1/deposits/verify&apos;
+    Proxy-&gt;&gt;AppLogic: redirect POST {APPLOGIC}/api/v1/deposits/verify&apos;
+
+    AppLogic-&gt;AppLogic: Check sign policy
+    opt if coin - daemons worker
+        PeatioDaemons-&gt;&gt;Pusher: [trigger private-{cn} / deposit]
+        PeatioDaemons-&gt;&gt;RabbitMQ: [publish default channel]
+    end
+    AppLogic--&gt;&gt;Proxy: Response
+    Proxy--&gt;&gt;User: Redirect
+</pre>
+<h2 class="mume-header" id="withdraws-fiats">Withdraws: Fiats</h2>
+
+<h3 class="mume-header" id="user-initiate-new-withdraw">User initiate new withdraw</h3>
+
+<p>This version is not realizing in Peatio</p>
+<div class="mermaid">sequenceDiagram
+    participant PermittedSigners
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Pusher
+
+    PeatioDaemons->>RabbitMQ: [subscribe default channel]
+    Note over PeatioDaemons,RabbitMQ: queues - withdraw_coin
+    User->>Proxy: request post '{APPLOGIC}/api/v1/withdraws/new'
+    Proxy->>AppLogic: redirect post '{APPLOGIC}/api/v1/withdraws/new'
+    AppLogic->>Db: Insert record
+
+    AppLogic->>Vault: Create OTP (MFA)
+    Vault-->>AppLogic: Created OTP (MFA)
+    AppLogic-->>Proxy: Withdraw ID in queue
+    Proxy-->>User: Withdraw ID in queue
+
+    Vault->>User: Send GA OTP
+    User->>Proxy: MFA Verification WithdrawId + OTP, POST {APPLOGIC}/api/v1/withdraws/verify'
+    Proxy->>AppLogic: redirect POST {APPLOGIC}/api/v1/withdraws/verify'
+
+    AppLogic->AppLogic: Check sign policy
+
+    AppLogic->>Db: update record
+    Db-->>AppLogic: get organization signers list
+    opt if coin - daemons worker
+        PeatioDaemons->>Pusher: [trigger private-{cn} / withdraw]
+        PeatioDaemons->>RabbitMQ: [publish default channel]
+    end
+    AppLogic-->>Notifications: Publish withdraw request for organization signers
+    AppLogic-->>Proxy: Response notification about waiting accepting
+    Proxy-->>User: Redirect notification
+</div>
+<pre class="language-">sequenceDiagram
+    participant PermittedSigners
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Pusher
+
+    PeatioDaemons-&gt;&gt;RabbitMQ: [subscribe default channel]
+    Note over PeatioDaemons,RabbitMQ: queues - withdraw_coin
+    User-&gt;&gt;Proxy: request post &apos;{APPLOGIC}/api/v1/withdraws/new&apos;
+    Proxy-&gt;&gt;AppLogic: redirect post &apos;{APPLOGIC}/api/v1/withdraws/new&apos;
+    AppLogic-&gt;&gt;Db: Insert record
+
+    AppLogic-&gt;&gt;Vault: Create OTP (MFA)
+    Vault--&gt;&gt;AppLogic: Created OTP (MFA)
+    AppLogic--&gt;&gt;Proxy: Withdraw ID in queue
+    Proxy--&gt;&gt;User: Withdraw ID in queue
+
+    Vault-&gt;&gt;User: Send GA OTP
+    User-&gt;&gt;Proxy: MFA Verification WithdrawId + OTP, POST {APPLOGIC}/api/v1/withdraws/verify&apos;
+    Proxy-&gt;&gt;AppLogic: redirect POST {APPLOGIC}/api/v1/withdraws/verify&apos;
+
+    AppLogic-&gt;AppLogic: Check sign policy
+
+    AppLogic-&gt;&gt;Db: update record
+    Db--&gt;&gt;AppLogic: get organization signers list
+    opt if coin - daemons worker
+        PeatioDaemons-&gt;&gt;Pusher: [trigger private-{cn} / withdraw]
+        PeatioDaemons-&gt;&gt;RabbitMQ: [publish default channel]
+    end
+    AppLogic--&gt;&gt;Notifications: Publish withdraw request for organization signers
+    AppLogic--&gt;&gt;Proxy: Response notification about waiting accepting
+    Proxy--&gt;&gt;User: Redirect notification
+</pre>
+<h3 class="mume-header" id="subscriber-get-withdraw-request-for-organization-signers">Subscriber get withdraw request (for organization signers)</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant PermittedSigners
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    Notifications-->>PermittedSigners: Receive notification about signature waiting
+
+    PermittedSigners->>Proxy: Receive withdraw - request GET {AppLogic} /api/v1/withdraws/id
+    Proxy->>AppLogic: redirect GET {AppLogic} /api/v1/withdraws/id
+
+    Db-->>AppLogic: get withdraw
+    AppLogic-->>Proxy: redirect withdraw
+    Proxy-->>PermittedSigners: redirect withdraw
+
+    opt not canceled yet
+        alt jws signatures
+            PermittedSigners->>AppLogic: request POST {AppLogic} /api/v1/withdraws/accept
+            AppLogic->>AppLogic: Sign withdraw document
+            AppLogic->>Db: Update record - add withdraw signature
+            opt all signatures received
+                AppLogic-->>Notifications: Publish info about receiving all organization signatures
+            end
+        else canceled
+            PermittedSigners->>AppLogic: request POST {AppLogic} /api/v1/withdraws/cancel
+            AppLogic->>Db: Set withdraw state canceled
+            AppLogic-->>Notifications: Publish about withdraw canceling
+        end
+        AppLogic-->>Proxy: response result
+        Proxy-->>PermittedSigners: redirect result
+    end    
+</div>
+<pre class="language-">sequenceDiagram
+    participant PermittedSigners
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+
+    Notifications--&gt;&gt;PermittedSigners: Receive notification about signature waiting
+
+    PermittedSigners-&gt;&gt;Proxy: Receive withdraw - request GET {AppLogic} /api/v1/withdraws/id
+    Proxy-&gt;&gt;AppLogic: redirect GET {AppLogic} /api/v1/withdraws/id
+
+    Db--&gt;&gt;AppLogic: get withdraw
+    AppLogic--&gt;&gt;Proxy: redirect withdraw
+    Proxy--&gt;&gt;PermittedSigners: redirect withdraw
+
+    opt not canceled yet
+        alt jws signatures
+            PermittedSigners-&gt;&gt;AppLogic: request POST {AppLogic} /api/v1/withdraws/accept
+            AppLogic-&gt;&gt;AppLogic: Sign withdraw document
+            AppLogic-&gt;&gt;Db: Update record - add withdraw signature
+            opt all signatures received
+                AppLogic--&gt;&gt;Notifications: Publish info about receiving all organization signatures
+            end
+        else canceled
+            PermittedSigners-&gt;&gt;AppLogic: request POST {AppLogic} /api/v1/withdraws/cancel
+            AppLogic-&gt;&gt;Db: Set withdraw state canceled
+            AppLogic--&gt;&gt;Notifications: Publish about withdraw canceling
+        end
+        AppLogic--&gt;&gt;Proxy: response result
+        Proxy--&gt;&gt;PermittedSigners: redirect result
+    end
+</pre>
+<h3 class="mume-header" id="all-organization-signatures-received">All organization signatures received</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant PermittedSigners
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+    
+    Notifications-->>AppLogic: Withdraw - all signatures received
+    AppLogic->>AppLogic: Set PEATIO mandatory signature
+    AppLogic->>Peatio: Create accepted withdraw POST {PEATIO} /management_api/v1/withdraws/new
+    Peatio->>+PeatioDaemons: withdraw in queuee
+    PeatioDaemons->>+RabbitMQ: withdraw in queuee
+    RabbitMQ-->>-PeatioDaemons: withdraw created
+    PeatioDaemons-->>-AppLogic: withdraw created
+    AppLogic->>Db: Update record
+    AppLogic-->>Notifications: Publish about withdraw completing
+</div>
+<pre class="language-">sequenceDiagram
+    participant PermittedSigners
+    participant User
+    participant Proxy
+    participant AppLogic
+    participant Peatio
+    participant PeatioDaemons
+    participant RabbitMQ
+    participant Db
+    participant Vault
+    participant Notifications
+    
+    Notifications--&gt;&gt;AppLogic: Withdraw - all signatures received
+    AppLogic-&gt;&gt;AppLogic: Set PEATIO mandatory signature
+    AppLogic-&gt;&gt;Peatio: Create accepted withdraw POST {PEATIO} /management_api/v1/withdraws/new
+    Peatio-&gt;&gt;+PeatioDaemons: withdraw in queuee
+    PeatioDaemons-&gt;&gt;+RabbitMQ: withdraw in queuee
+    RabbitMQ--&gt;&gt;-PeatioDaemons: withdraw created
+    PeatioDaemons--&gt;&gt;-AppLogic: withdraw created
+    AppLogic-&gt;&gt;Db: Update record
+    AppLogic--&gt;&gt;Notifications: Publish about withdraw completing
+</pre>
+<h1 class="mume-header" id="api-secret-for-barong">API secret for Barong</h1>
+
+<p>This section is actual for</p>
+<h1 class="mume-header" id="service-processes">Service processes</h1>
+
+<p>This section contains jwt authentification process</p>
+<h3 class="mume-header" id="jwt-verification">JWT verification</h3>
+
+<div class="mermaid">sequenceDiagram
+    participant Sender
+    participant AppLogic
+    participant Db
+
+    Sender->>AppLogic: Request with JWToken
+    AppLogic->>AppLogic: Decode & verify JWToken
+    Note over AppLogic: verify: expiration, iss, jti, aud, sub, algorithms, leeway (iat, iss, exp)
+    AppLogic->>Db: Find account by email
+    Db-->>AppLogic: Receive member
+    alt no verification or no member
+        AppLogic-->>Sender: 401 Unauthorized
+    else verified
+        Note over AppLogic: continue execution
+    end
+</div>
+<pre class="language-">sequenceDiagram
+    participant Sender
+    participant AppLogic
+    participant Db
+
+    Sender-&gt;&gt;AppLogic: Request with JWToken
+    AppLogic-&gt;&gt;AppLogic: Decode &amp; verify JWToken
+    Note over AppLogic: verify: expiration, iss, jti, aud, sub, algorithms, leeway (iat, iss, exp)
+    AppLogic-&gt;&gt;Db: Find account by email
+    Db--&gt;&gt;AppLogic: Receive member
+    alt no verification or no member
+        AppLogic--&gt;&gt;Sender: 401 Unauthorized
+    else verified
+        Note over AppLogic: continue execution
+    end
+</pre>
+
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#github-repository">GitHub repository:</a></li>
+<li><a href="#installation">Installation</a>
+<ul>
+<li><a href="#rendering-document">Rendering document</a></li>
+<li><a href="#viewing-current-documents">Viewing current documents</a></li>
+</ul>
+</li>
+<li><a href="#user-management-api">User management API</a></li>
+<li><a href="#barong-management-api">Barong Management API</a>
+<ul>
+<li><a href="#labels-with-private-scope">Labels with 'private' scope</a>
+<ul>
+<li><a href="#create-a-label-with-private-scope-and-assigns-to-account">Create a label with 'private' scope and assigns to account</a></li>
+<li><a href="#update-label">Update label</a></li>
+<li><a href="#delete-label">Delete label</a></li>
+</ul>
+</li>
+<li><a href="#timestamp">Timestamp</a>
+<ul>
+<li><a href="#receive-server-time-in-seconds-since-unix-epoch">Receive server time in seconds since Unix epoch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#trading-api">Trading API</a><br>
+* <a href="#saving-order-and-start-matching">Saving order and start matching</a><br>
+* <a href="#create-new-order">Create new order</a><br>
+* <a href="#create-multi-orders">Create multi orders</a><br>
+* <a href="#delete-order">Delete order</a><br>
+* <a href="#clear-all-orders">Clear all orders</a><br>
+* <a href="#get-orders-list">Get orders list</a><br>
+* <a href="#get-order-detail">Get order detail</a><br>
+* <a href="#get-the-order-book-of-specified-market">Get the order book of specified market</a><br>
+* <a href="#get-depth-or-specified-market">Get depth or specified market</a><br>
+* <a href="#get-members-executed-trades">Get members executed trades</a>
+<ul>
+<li><a href="#public-data">Public data</a>
+<ul>
+<li><a href="#get-markets-list">Get markets list</a></li>
+<li><a href="#get-tickers">Get tickers</a></li>
+<li><a href="#get-tickers-for-specified-market">Get tickers for specified market</a></li>
+<li><a href="#get-order-book-for-market">Get order book for market</a></li>
+<li><a href="#get-depth">Get depth</a></li>
+<li><a href="#get-recent-trades-on-market">Get recent trades on market</a></li>
+<li><a href="#get-ohlck-line-of-specific-market">Get OHLC(k line) of specific market</a></li>
+<li><a href="#get-fees-depositwithdrawtrading">Get fees (deposit/withdraw/trading)</a></li>
+</ul>
+</li>
+<li><a href="#accounts-data">Account's data</a>
+<ul>
+<li><a href="#get-your-profile-and-accounts-info">Get your profile and accounts info</a></li>
+<li><a href="#get-your-deposits-history">Get your deposits history</a></li>
+<li><a href="#get-your-deposit-address">Get your deposit address</a></li>
+<li><a href="#get-your-deposit-details">Get your deposit details</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#raised-security-api">Raised security API</a>
+<ul>
+<li><a href="#deposits-fiats">Deposits: Fiats</a></li>
+<li><a href="#withdraws-fiats">Withdraws: Fiats</a>
+<ul>
+<li><a href="#user-initiate-new-withdraw">User initiate new withdraw</a></li>
+<li><a href="#subscriber-get-withdraw-request-for-organization-signers">Subscriber get withdraw request (for organization signers)</a></li>
+<li><a href="#all-organization-signatures-received">All organization signatures received</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#api-secret-for-barong">API secret for Barong</a></li>
+<li><a href="#service-processes">Service processes</a><br>
+* <a href="#jwt-verification">JWT verification</a></li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    </body>
+    
+    <script>
+// config mermaid init call
+// http://knsv.github.io/mermaid/#configuration
+//
+// You can edit the 'MERMAID_CONFIG' variable below.
+MERMAID_CONFIG = {
+  startOnLoad: false
+}
+
+if (window['MERMAID_CONFIG']) {
+  window['MERMAID_CONFIG'].startOnLoad = false
+  window['MERMAID_CONFIG'].cloneCssStyles = false 
+}
+mermaidAPI.initialize(window['MERMAID_CONFIG'] || {})
+
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+
+  Reveal.addEventListener('slidechanged', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+} else {
+  mermaid.init(null, document.getElementsByClassName('mermaid'))
+}
+</script>
+    
+    <script>
+(function bindTaskListEvent() {
+  var taskListItemCheckboxes = document.body.getElementsByClassName('task-list-item-checkbox')
+  for (var i = 0; i < taskListItemCheckboxes.length; i++) {
+    var checkbox = taskListItemCheckboxes[i]
+    var li = checkbox.parentElement
+    if (li.tagName !== 'LI') li = li.parentElement
+    if (li.tagName === 'LI') {
+      li.classList.add('task-list-item')
+    }
+  }
+}())    
+</script>
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  </html>
